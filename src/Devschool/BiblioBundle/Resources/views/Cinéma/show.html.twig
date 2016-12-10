@@ -7,13 +7,13 @@
     <h1>{{ film.titre }}</h1>
     <span>({{ film.genre.nom }})</span><br />
     <br />
-    <span>Ecrit par {{ film.auteur }}</span><br />
+    <span>Auteur: {{ film.auteur }}</span><br />
     <br />
-    <span>Sortie le {{ film.dateParution|date('d/m/Y') }}</span>
+    <span>Sortie le: {{ film.dateParution|date('d/m/Y') }}</span>
 
     <p>{{ film.description }}</p>
 
-    <span>Nombre de pages : {{ film.nombrePages }}</span>
+    <span>Realisateur : {{ film.realisateur }}</span>
 
 
     <p><a href="{{ path('page_livres') }}">Retour</a></p>
