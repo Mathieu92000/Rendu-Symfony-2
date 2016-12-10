@@ -20,7 +20,7 @@ class DefaultController extends Controller
  */
 public function showAction($id)
 {
-    $livre = $this->getDoctrine()->getRepository('DevschoolBiblioBundle:cinema')->find($id);
+    $cinema = $this->getDoctrine()->getRepository('DevschoolBiblioBundle:cinema')->find($id);
 
     return $this->render(
         'DevschoolBiblioBundle:cinema:show.html.twig',
