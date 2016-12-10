@@ -5,12 +5,12 @@ namespace Devschool\BiblioBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Cinema
+ * cinema
  *
- * @ORM\Table(name="cin�ma")
- * @ORM\Entity(repositoryClass="Devschool\BiblioBundle\Repository\CinemaRepository")
+ * @ORM\Table(name="cinema")
+ * @ORM\Entity(repositoryClass="Devschool\BiblioBundle\Repository\cinemaRepository")
  */
-class Cinema
+class cinema
 {
     /**
      * @var int
@@ -43,9 +43,9 @@ class Cinema
     private $auteur;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="r�alisateur", type="string", length=255)
+     * @ORM\Column(name="realisateur", type="integer")
      */
     private $realisateur;
 
@@ -65,7 +65,7 @@ class Cinema
      *
      * @param string $titre
      *
-     * @return Cin�ma
+     * @return cinema
      */
     public function setTitre($titre)
     {
@@ -89,7 +89,7 @@ class Cinema
      *
      * @param string $description
      *
-     * @return Cin�ma
+     * @return cinema
      */
     public function setDescription($description)
     {
@@ -113,7 +113,7 @@ class Cinema
      *
      * @param string $auteur
      *
-     * @return Cin�ma
+     * @return cinema
      */
     public function setAuteur($auteur)
     {
@@ -133,11 +133,11 @@ class Cinema
     }
 
     /**
-     * Set r�alisateur
+     * Set realisateur
      *
-     * @param string $r�alisateur
+     * @param integer $realisateur
      *
-     * @return Cin�ma
+     * @return cinema
      */
     public function setRealisateur($realisateur)
     {
@@ -147,9 +147,9 @@ class Cinema
     }
 
     /**
-     * Get r�alisateur
+     * Get realisateur
      *
-     * @return string
+     * @return int
      */
     public function getRealisateur()
     {
