@@ -1,21 +1,43 @@
 {# src\Devschool\BiblioBundle\Resources\views\Livre\list.html.twig #}
-{% extends 'DevschoolBiblioBundle::layout.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des films</title>
+</head>
+<body>
+<div id="sidebar">
+    <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/films">Films</a></li>
+    </ul>
+</div>
 
-{% block title %}Liste des Films{% endblock %}
-
-{% block body %}
-    <h1>{{ titre|upper }} ({{ Films|length }})</h1>
+<div id="content">
+    <h1>FILMS</h1>
 
     <ul class="liste">
-        {% for list in Films %}
-            <li>
-                <h2><a href="{{ path('page_livre', {'id': film.id}) }}">{{ film.titre }}</a></h2>
-                {% if film.auteur == "J. K. Rowling" %}
-                    <strong>{{ film.auteur }}</strong>
-                {% else %}
-                    <span>{{ film.auteur }}</span>
-                {% endif %}
-            </li>
-        {% endfor %}
+        <li>
+            <h2><a href="/film/1">Rogue One Star Wars</a></h2>
+            <span>The Walt Disney Company France</span>
+        </li>
+        <li>
+            <h2><a href="/film/2">Cinquante Nuances plus sombres</a></h2>
+            <strong>James Foley</strong>
+        </li>
+        <li>
+            <h2><a href="/livre/3">Sully</a></h2>
+            <span>Clint Eastwood</span>
+        </li>
+        <li>
+            <h2><a href="/film/4">Transformers : The Last Knight</a></h2>
+            <span>Michael Bay</span>
+        </li>
+        <li>
+            <h2><a href="/film/5">'Assassin's Creed</a></h2>
+            <span>Justin Kurzel</span>
+        </li>
     </ul>
-{% endblock %}
+</div>
+</body>
+</html>
