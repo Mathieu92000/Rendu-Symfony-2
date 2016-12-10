@@ -1,21 +1,33 @@
 <?php
+// src/Devschool/BiblioBundle/Controller/DefaultController.php
+namespace Devschool\BiblioBundle\Controller;
 
-namespace AppBundle\Controller;
-
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('DevschoolBiblioBundle:Default:index.html.twig');
+    }
+
+    /**
+     * @Route("/Cinéma")
+     */
+    public function listAction()
+    {
+        return $this->render('DevschoolBiblioBundle:Cinéma:list.html.twig');
+    }
+
+    /**
+     * @Route("/livre/{id}", requirements={"id": "\d+"})
+     */
+    public function showAction($id)
+    {
+        return $this->render('DevschoolBiblioBundle:Cinéma:show.html.twig');
     }
 }

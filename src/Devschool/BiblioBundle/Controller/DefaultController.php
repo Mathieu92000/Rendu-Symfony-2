@@ -14,13 +14,6 @@ class DefaultController extends Controller
     {
         return $this->render('DevschoolBiblioBundle:Default:index.html.twig');
     }
-    /**
-     * @Route("/cinéma")
-     */
-    public function listAction()
-    {
-        return $this->render('DevschoolBiblioBundle:cinéma:list.html.twig');
-    }
 }
 
 
