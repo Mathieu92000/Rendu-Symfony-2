@@ -22,25 +22,26 @@ class DefaultController extends Controller
      */
     public function listAction()
     {
-        $cinema = $this->getDoctrine()->getRepository('DevschoolBiblioBundle:Livre')->findAll();
+        $cinema = $this->getDoctrine()->getRepository('DevschoolBiblioBundle:cinema')->findAll();
 
         $titre_des_films = 'Titres des films';
 
         return $this->render(
-            'DevschoolBiblioBundle:Livre:list.html.twig',
-            ['livres' => $cinema, 'titre' => $titre_des_films]
+            'DevschoolBiblioBundle:cinema:list.html.twig',
+            ['cinema' => $cinema, 'titre' => $titre_des_films]
         );
     }
 
+
     /**
-     * @Route("/cinema/{id}", requirements={"id": "\d+"}, name="cinema")
+     * @Route("/cinema-films.twig", requirements={"id": "\d+"}, name="cinema")
      */
     public function showAction($id)
     {
-        $cinema = $this->getDoctrine()->getRepository('DevschoolBiblioBundle:cinema')->find($id);
+        $cinema = $this->getDoctrine()->getRepository('DevschoolBiblioBundle:cinema-films.twig')->find($id);
 
         return $this->render(
-            'DevschoolBiblioBundle:cinema:show.html.twig',
+            'DevschoolBiblioBundle:cinema-films.twig',
             ['cinema' => $cinema]
         );
     }
